@@ -5,44 +5,36 @@ function Bar(props) {
 
   const styleObj = {
     backgroundColor: 'gray',
-    border: '10',
-    borderColor: '#a9a9a9',
-    height: props.height,
-    top: '100',
-    width: '10'
+    width: '15px',
+    height: (props.h * 50) + 'px'
   }
 
-  return (
-    <div style={styleObj}>
+  return(
+    <div className='bar' style={styleObj}>
 
     </div>
-  )
+  );
 }
 
 function App() {
-  const [n, setN] = useState(10);
-
-  var bars = [];
-
-  useEffect(() => {
-    for(let i = 0; i < n; i++) {
-      bars.push(<Bar height={i * 100}></Bar>)
-    }
-
-    setN(n);
-  }, [n]);
+  const [numBars, setnumBars] = useState(0);
+  const [barArr, setbarArr] = useState([]);
+  const [vals, setVals] = useState([])
+  
 
   return (
     <>
-      <div>
-        <h1>Array length {n}</h1>
-        <input type='number' onChange={(e) => setN(e.target.value)}></input>
-      </div>
-      
-      <div>
-        <Bar height={100}></Bar>
-        {bars}
-      </div>
+      <h1>{numBars}</h1>
+
+      <div className='barDiv'>{barArr}</div>
+
+      <input type='number' onChange={(e) => {
+        setnumBars(e.target.value)
+
+        for(let i = 1; i <= numBars; i++) {
+
+        }
+      }}></input>
     </>
   )
 }
