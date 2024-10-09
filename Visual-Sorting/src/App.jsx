@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import randomize from './Algos'
+import {randomize, bubbleSort} from './Algos'
 
 function Bar(props) {
 
@@ -27,7 +27,7 @@ function App() {
   useEffect(() => {
     let arr = []
     for(let i = 0; i < vals.length; i++) {
-      arr.push(<Bar h={vals[i]}></Bar>)
+      arr.push(<Bar h={vals[i]} key={i}></Bar>)
     }
     setbarArr(arr)
   }, [vals]);
@@ -48,6 +48,13 @@ function App() {
         x = randomize(x);
         setVals(x);
       }}>Shuffle</button>
+
+      <button onClick={() => {
+        var s = new bubbleSort(vals);
+        s.sort()
+
+        setVals(s.arr);
+      }}>Sort</button>
 
       {vals}
       
