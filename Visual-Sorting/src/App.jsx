@@ -19,7 +19,6 @@ function Bar(props) {
 }
 
 function App() {
-  const [numBars, setnumBars] = useState(0);
   const [barArr, setbarArr] = useState([]);
   const [vals, setVals] = useState([])
   
@@ -50,10 +49,10 @@ function App() {
       }}>Shuffle</button>
 
       <button onClick={() => {
-        var s = new bubbleSort(vals);
-        s.sort()
-
-        setVals(s.arr);
+        var x = vals
+        setVals([])
+        var [sortedX, sortedXHistory] = bubbleSort(x);
+        setVals([...sortedX])
       }}>Sort</button>
 
       {vals}
