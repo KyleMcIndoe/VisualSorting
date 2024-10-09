@@ -6,7 +6,8 @@ function Bar(props) {
   const styleObj = {
     backgroundColor: 'gray',
     width: '15px',
-    height: (props.h * 50) + 'px'
+    height: (props.h * 50) + 'px',
+    border: "2px solid white"
   }
 
   return(
@@ -22,18 +23,30 @@ function App() {
   const [vals, setVals] = useState([])
   
 
+  useEffect(() => {
+    let arr = []
+    for(let i = 0; i < vals.length; i++) {
+      arr.push(<Bar h={vals[i]}></Bar>)
+    }
+    setbarArr(arr)
+  }, [vals]);
+
   return (
     <>
       <input type='number' onChange={(e) => {
         setVals([])
         let arr = []
-        for(let i = 0; i < e.target.value; i++) {
+        for(let i = 1; i <= e.target.value; i++) {
           arr.push(i)
         }
         setVals(arr)
       }}></input>
 
       {vals}
+      
+      <div className='barDiv'>
+        {barArr}
+      </div>
     </>
   )
 }

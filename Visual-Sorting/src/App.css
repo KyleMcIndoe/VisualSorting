@@ -1,4 +1,5 @@
 .barDiv {
-    background-color: green;
-    display: inline;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
 }
