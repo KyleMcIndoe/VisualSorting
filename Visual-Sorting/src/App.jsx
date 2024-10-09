@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
+import randomize from './Algos'
 
 function Bar(props) {
 
@@ -41,6 +42,12 @@ function App() {
         }
         setVals(arr)
       }}></input>
+
+      <button onClick={() => {
+        let x = vals;
+        x = randomize(x);
+        setVals(x);
+      }}>Shuffle</button>
 
       {vals}
       
