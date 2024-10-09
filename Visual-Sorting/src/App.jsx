@@ -24,17 +24,16 @@ function App() {
 
   return (
     <>
-      <h1>{numBars}</h1>
-
-      <div className='barDiv'>{barArr}</div>
-
       <input type='number' onChange={(e) => {
-        setnumBars(e.target.value)
-
-        for(let i = 1; i <= numBars; i++) {
-
+        setVals([])
+        let arr = []
+        for(let i = 0; i < e.target.value; i++) {
+          arr.push(i)
         }
+        setVals(arr)
       }}></input>
+
+      {vals}
     </>
   )
 }
