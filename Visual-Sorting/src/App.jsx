@@ -21,6 +21,7 @@ function Bar(props) {
 function App() {
   const [barArr, setbarArr] = useState([]);
   const [vals, setVals] = useState([])
+  const [sortOption, setSortOption] = useState();
   
 
   useEffect(() => {
@@ -50,6 +51,7 @@ function App() {
 
       <button onClick={() => {
         var x = vals
+        var sort = sortOption
         setVals([])
         var [sortedX, sortedXHistory] = bubbleSort(x);
         setVals([...sortedX])
@@ -60,6 +62,11 @@ function App() {
       <div className='barDiv'>
         {barArr}
       </div>
+
+      <select value={sortOption} onClick={(e) => {setSortOption(e.target.value)}}>
+        <option value={bubbleSort}>Bubble sort</option>
+        <option value={randomize}>Randomize</option>
+      </select>
     </>
   )
 }

@@ -17,11 +17,12 @@ export function randomize(arr) { // shuffle the array
 
 export function bubbleSort(arr) { // totally not copy pasted from GFG
     var history = []
+    var n = arr.length
 
-    for (var i = 0; i < arr.length; i++) {
+    for (var i = 0; i < n; i++) {
 
         // Last i elements are already in place  
-        for (var j = 0; j < (arr.length - i - 1); j++) {
+        for (var j = 0; j < (n - i - 1); j++) {
 
             // Checking if the item at present iteration 
             // is greater than the next iteration
