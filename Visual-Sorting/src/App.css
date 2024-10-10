@@ -1,5 +1,25 @@
+* {
+    background-color: rgb(39, 39, 39);
+    color: white;
+    border-radius: 1vmax;
+    border-color: white;
+    text-align: center;
+    font-size: 2vmax;
+    padding: 0.25vmax;
+    margin-left: 1vmax;
+    margin-right: 1vmax;
+    margin-bottom: 0.5vmax;
+}
+
 .barDiv {
     background-color: black;
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    height: 40vmax;
 }
+
+.wrapper {
+    justify-content: center;
+}
+
