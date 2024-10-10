@@ -21,6 +21,8 @@ function Bar(props) {
 function App() {
   const [barArr, setbarArr] = useState([]);
   const [vals, setVals] = useState([]);
+  const [delay, setDelay] = useState(1000);
+  const [sorting, setSorting] = useState(true);
   
 
   useEffect(() => {
@@ -50,19 +52,28 @@ function App() {
 
       <button onClick={() => {
         var x = vals
-        setVals([])
-
+        setSorting(true)
         var [sortX, sortXHistory] = bubbleSort(x);
 
         function step(i) {
           setVals([...sortXHistory[i]]);
         }
 
-        setTimeout(() => {
-          step(0);
-        }, 3000)
-        
+        for(let i = 0; i < sortXHistory.length && sorting == true; i++) {
+          setTimeout(() => {
+            step(i)
+          }, delay)
+        }
+
       }}>Sort</button>
+
+      <button onClick={() => {
+        setSorting(false)
+      }}>Stop sort</button>
+
+      <input type='number' onChange={(e) => {
+        setDelay(this.target.value)
+      }}></input>
 
       {vals}
       

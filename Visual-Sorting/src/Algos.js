@@ -16,7 +16,7 @@ export function randomize(arr) { // shuffle the array
 }
 
 export function bubbleSort(arr) { // totally not copy pasted from GFG
-    var history = []
+    var history = [arr]
     var n = arr.length
 
     for (var i = 0; i < n; i++) {
@@ -34,7 +34,7 @@ export function bubbleSort(arr) { // totally not copy pasted from GFG
                 arr[j] = arr[j + 1]
                 arr[j + 1] = temp
 
-                history.push(arr)
+                history.push([...arr])
             }
         }
     }
