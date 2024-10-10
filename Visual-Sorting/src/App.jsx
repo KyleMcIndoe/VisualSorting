@@ -2,10 +2,6 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import {randomize, bubbleSort} from './Algos'
 
-function sleep(delay) {
-  return new Promise( res => setTimeout(res, delay));
-}
-
 function Bar(props) {
 
   const styleObj = {
@@ -55,9 +51,17 @@ function App() {
       <button onClick={() => {
         var x = vals
         setVals([])
-        var [sortedX, sortedXHistory] = bubbleSort(x);
-        sleep(2000)
-        setVals([...sortedX])
+
+        var [sortX, sortXHistory] = bubbleSort(x);
+
+        function step(i) {
+          setVals([...sortXHistory[i]]);
+        }
+
+        setTimeout(() => {
+          step(0);
+        }, 3000)
+        
       }}>Sort</button>
 
       {vals}
