@@ -8,7 +8,8 @@ function Bar(props) {
     backgroundColor: 'gray',
     width: '15px',
     height: (props.h * 50) + 'px',
-    border: "2px solid white"
+    border: "2px solid white",
+    alignSelf: 'flex-end'
   }
 
   return(
