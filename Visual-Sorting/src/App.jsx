@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import {randomize, bubbleSort} from './Algos'
+import {randomize, bubbleSort, selectionSort} from './Algos'
 
 function Bar(props) {
 
@@ -85,6 +85,7 @@ function App() {
 
         <select>
           <option value={bubbleSort([])}>Bubble sort</option>
+          <option value={selectionSort([])}>Selection sort</option>
         </select>
       </div>
     </>
