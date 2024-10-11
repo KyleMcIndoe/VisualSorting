@@ -7,7 +7,7 @@ function Bar(props) {
   const styleObj = {
     backgroundColor: 'gray',
     width: (100 / props.num) / 2 + '%',
-    height: (props.h * (100 / props.num)) - 10 + '%',
+    height: Math.abs((props.h * (100 / props.num)) - 10) + '%',
     border: "2px solid white",
     alignSelf: 'flex-end',
     margin: '0'
@@ -85,7 +85,6 @@ function App() {
 
         <select>
           <option value={bubbleSort([])}>Bubble sort</option>
-          <option value={randomize([])}>Randomize</option>
         </select>
       </div>
     </>
